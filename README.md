@@ -74,3 +74,21 @@ init_drizzle(app, drizzle_handler_routes, ioloop)
 
 now we can open a websocket connection to `/ws`
 
+#### subscription and broadcasting
+To subscribe the client socket to any topic `DrizzleHandler` has `subscribe` function. see below code from taken from test
+
+To broadcast any messgae to all clients who subscribed to a topic use
+`tornado_drizzle.subscriber.publish` function
+
+```
+class TestHandler(DrizzleHandler):
+
+    @gen.coroutine
+    def test_subscribe(self, message):
+        yield self.subscribe('__test__')
+        return {}
+
+    @gen.coroutine
+    def test_publish(self, message):
+        yield publish("__test__", {"key": "val"})
+```
