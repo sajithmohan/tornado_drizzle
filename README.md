@@ -1,6 +1,6 @@
 # Tornado Drizzle
 ----
-Drizzle is micro framwork  for tornado that enables websocket to perform restfull action on top of resources. Drizzle redirects websocket request to corresponding functions that defined in the resource handler
+Drizzle is microframework  for Tornado that enables websocket to perform restfull action on top of resources. Drizzle redirects websocket request to corresponding functions that defined in the resource handler
 #### sample code
 ```
 import tornado.ioloop
@@ -86,7 +86,7 @@ then we can send message in Json format
 `resource`, `action` and `request_id` are manatory values. Complete message will pass to resource handler as an input param
 `data` can be either dict or list object through which we can pass query params or other payload
 
-drizzle find out resource handler for the resource and executes action function and replay back with return value and incoming `request_id` 
+drizzle find out resource handler for the resource and executes action function and reply back with return value and incoming `request_id` 
 ```
 {
   "data": {
