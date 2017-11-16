@@ -1,6 +1,6 @@
 # Tornado Drizzle
 ----
-Drizzle is microframework  for Tornado that enables websocket to perform restfull action on top of resources. Drizzle redirects websocket request to corresponding functions that defined in the resource handler
+Drizzle is microframework  for Tornado that enables websocket to perform restful action on top of resources. Drizzle redirects websocket request to corresponding functions that defined in the resource handler
 #### sample code
 ```
 import tornado.ioloop
@@ -51,7 +51,7 @@ here we added `/ws`. so every request to `/ws` will handle by `DrizzleWebSocket`
 ```
 
 
-we defined `ResourceHandler` to represent a resource.and one action `get` which will do restfull action  on resouce and return a list or dict.
+we defined `ResourceHandler` to represent a resource.and one action `get` which will do restful action  on resource and return a list or dict.
 ```
 class ResourceHandler(DrizzleHandler):
 
@@ -83,7 +83,7 @@ then we can send message in Json format
     "request_id": 1
 }
 ```
-`resource`, `action` and `request_id` are manatory values. Complete message will pass to resource handler as an input param
+`resource`, `action` and `request_id` are mandatory values. Complete message will pass to resource handler as an input param
 `data` can be either dict or list object through which we can pass query params or other payload
 
 drizzle find out resource handler for the resource and executes action function and reply back with return value and incoming `request_id` 
@@ -99,7 +99,7 @@ drizzle find out resource handler for the resource and executes action function 
 #### Subscription and broadcasting
 To subscribe the client socket to any topic `DrizzleHandler` has `subscribe` function. see below code taken from test
 
-To broadcast any messgae to all clients who subscribed to a topic use
+To broadcast any message to all clients who subscribed to a topic use
 `tornado_drizzle.subscriber.publish` function
 
 ```
